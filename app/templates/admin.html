@@ -1,0 +1,19 @@
+<!-- index.html-->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>GuestBook Admin</h1>
+</div>
+<div class="col-lg-12">
+  {% for guest in guests %}
+    <h3>{{ guest.name }}</h3>
+    <p>{{ guest.comment }}</p>
+    <p>
+        <a href="/edit/{{ guest.id }}">edit</a> <a href="/delete/{{ guest.id }}">delete</a>
+    </p>
+    <hr/>
+  {% endfor %}
+</div>
+{% endblock %}
